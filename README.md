@@ -27,4 +27,4 @@ To update FreeFileSync to the latest version, simply run:
 ```shell
 brew update
 brew upgrade --cask freefilesync
-``` 
+```
