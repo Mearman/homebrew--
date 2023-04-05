@@ -10,6 +10,9 @@ cask 'freefilesync' do
   homepage 'https://www.freefilesync.org/'
 
   auto_updates true
-
+    
   pkg "FreeFileSync_#{version}.pkg"
 end
+
+
+
