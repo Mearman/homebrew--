@@ -41,12 +41,14 @@ jobs:
 
       - name: Update TinyTeX Formula
         run: |
-          wget https://github.com/rstudio/tinytex-releases/releases/download/$tinytex_version/TinyTeX-1-$tinytex_version.tar.gz
-
+          new_version_url="https://github.com/rstudio/tinytex-releases/releases/download/$tinytex_version/TinyTeX-1-$tinytex_version.tar.gz"
+          echo "New version URL: $new_version_url"
+          wget -q $new_version_url
           sha256=$(shasum -a 256 TinyTeX-1-$tinytex_version.tar.gz | awk '{print $1}')
 
           sed -i.bak "s/sha256 \"[a-f0-9]*\"/sha256 \"$sha256\"/" Formula/tinytex.rb
-          sed -i.bak "s/v[0-9]*\.[0-9]*\.[0-9]*-[a-z0-9]*\.[0-9]*\.[0-9]*/$tinytex_version/" Formula/tinytex.rb
+          sed -i.bak "s|url \".*\"|url \"$new_version_url\"|" Formula/tinytex.rb
+
           rm Formula/tinytex.rb.bak
 
       # - name: Commit changes
