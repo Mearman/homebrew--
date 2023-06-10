@@ -26,7 +26,13 @@ jobs:
 
       - name: Get latest TinyTeX version
         run: |
-          version=$(curl -s https://github.com/rstudio/tinytex-releases/releases/latest | grep -oP 'tag/\K[^"]+')
+          url="https://github.com/rstudio/tinytex-releases/releases/latest"
+          redirect_url=$(curl -s -o /dev/null -w '%{redirect_url}' "$url")
+          echo "Redirect URL: $redirect_url"
+
+          version="${redirect_url##*/tag/}"
+          echo "Version: $version"
+
           echo "tinytex_version=$version" >> $GITHUB_ENV
 
       - name: Print TinyTeX version
