@@ -24,10 +24,17 @@ jobs:
 
           brew install wget
 
-      - name: Update TinyTeX Formula
+      - name: Get latest TinyTeX version
         run: |
           version=$(curl -s https://github.com/rstudio/tinytex-releases/releases/latest | grep -oP 'tag/\K[^"]+')
+          echo "tinytex_version=$version" >> $GITHUB_ENV
 
+      - name: Print TinyTeX version
+        run:
+          echo "tinyex_version ${{ env.tinytex_version }}"
+
+      - name: Update TinyTeX Formula
+        run: |
           wget https://github.com/rstudio/tinytex-releases/releases/download/$version/TinyTeX-1-$version.tar.gz
 
           sha256=$(shasum -a 256 TinyTeX-1-$version.tar.gz | awk '{print $1}')
