@@ -75,4 +75,4 @@ jobs:
             see [TinyTeX ${env.tinytex_version}](https://github.com/rstudio/tinytex-releases/releases/tag/${env.tinytex_version})
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-
+          delete-branch: true
