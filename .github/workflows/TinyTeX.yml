@@ -2,7 +2,7 @@ name: Update TinyTeX Formula
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Run every day at midnight
+    - cron: "0 0 * * *" # Run every day at midnight
   workflow_dispatch:
   push:
 
@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -31,12 +33,11 @@ jobs:
           echo "tinytex_version=$version" >> $GITHUB_ENV
 
       - name: Print TinyTeX version
-        run:
-          echo "tinyex_version ${{ env.tinytex_version }}"
+        run: echo "tinyex_version ${{ env.tinytex_version }}"
 
-      - name: Checkout new branch
-        run: |
-          git checkout -b $tinytex_version
+      # - name: Checkout new branch
+      #   run: |
+      #     git checkout -b $tinytex_version
 
       - name: Update TinyTeX Formula
         run: |
@@ -49,10 +50,25 @@ jobs:
 
           rm Formula/tinytex.rb.bak
 
-      - name: Commit changes
-        continue-on-error: true
-        run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "joseph@mearman.co.uk"
-          git commit -am "Update TinyTeX to $tinytex_version"
-          git push origin $tinytex_version
+      # - name: Commit changes
+      #   continue-on-error: true
+      #   run: |
+      #     git config --global user.name "GitHub Action"
+      #     git config --global user.email "joseph@mearman.co.uk"
+      #     git commit -am "Update TinyTeX to ${{ env.tinytex_version }}"
+      #     git push origin ${{ env.tinytex_version }}"
+
+      # - if: ${{ steps.update-formula.outputs.exit-code == 78 }}
+        # name: Create Pull Request
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update TinyTeX to ${{ env.tinytex_version }}
+          base: main
+          branch: ${{ env.tinytex_version }}
+          title: Update TinyTeX to ${{ env.tinytex_version }}
+          body: Updated TinyTeX to version ${{ env.tinytex_version }}
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+
