@@ -32,5 +32,5 @@ brew install username/-/formula
 The Homebrew formula for [TinyTeX](https://github.com/yihui/tinytex).
 
 ```sh
-brew install -v Mearman/-/tinytex
+brew install Mearman/-/tinytex
 ```
