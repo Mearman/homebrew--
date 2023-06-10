@@ -15,16 +15,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Homebrew
+      - name: Verify wget is installed
         run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/runner/.bashrc
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-          brew update
-          brew upgrade
-
-          brew install wget
+          wget --version
 
       - name: Get latest TinyTeX version
         run: |
