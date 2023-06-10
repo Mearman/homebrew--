@@ -24,13 +24,18 @@ jobs:
 
           brew install wget
           
-          wget https://github.com/yihui/tinytex-releases/releases/latest/download/TinyTeX-1-latest.tar.gz
-          sha256=$(shasum -a 256 TinyTeX-1-latest.tar.gz | awk '{print $1}')
+          version=$(curl -s https://github.com/rstudio/tinytex-releases/releases/latest | grep -oP 'tag/\K[^"]+')
+          
+          wget https://github.com/rstudio/tinytex-releases/releases/download/$version/TinyTeX-1-$version.tar.gz
+          
+          sha256=$(shasum -a 256 TinyTeX-1-$version.tar.gz | awk '{print $1}')
+          
           sed -i.bak "s/sha256 \"[a-f0-9]*\"/sha256 \"$sha256\"/" Formula/tinytex.rb
-          sed -i.bak "s/v[0-9]*\.[0-9]*\.[0-9]*/v$(date +%Y.%m.%d)/" Formula/tinytex.rb
+          sed -i.bak "s/v[0-9]*\.[0-9]*\.[0-9]*/v$version/" Formula/tinytex.rb
+          
           rm Formula/tinytex.rb.bak
           
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          git commit -am "Update TinyTeX to latest release"
+          git commit -am "Update TinyTeX to $version"
           git push
