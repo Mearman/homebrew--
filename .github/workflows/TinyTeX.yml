@@ -73,7 +73,7 @@ jobs:
           title: Update TinyTeX to ${{ env.tinytex_version }}
           body: |
             Updated TinyTeX to version ${{ env.tinytex_version }}
-            see [TinyTeX ${env.tinytex_version}](https://github.com/rstudio/tinytex-releases/releases/tag/${env.tinytex_version})
+            see [TinyTeX ${{env.tinytex_version}}](https://github.com/rstudio/tinytex-releases/releases/tag/${{env.tinytex_version}})
           committer: JoeBot <joseph@mearman.co.uk>
           # author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
