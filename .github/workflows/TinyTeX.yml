@@ -41,7 +41,7 @@ jobs:
           sha256=$(shasum -a 256 TinyTeX-1-$tinytex_version.tar.gz | awk '{print $1}')
 
           sed -i.bak "s/sha256 \"[a-f0-9]*\"/sha256 \"$sha256\"/" Formula/tinytex.rb
-          sed -i.bak "s/v[0-9]*\.[0-9]*\.[0-9]*/v$tinytex_version/" Formula/tinytex.rb
+          sed -i.bak "s/v[0-9]*\.[0-9]*\.[0-9]*/$tinytex_version/" Formula/tinytex.rb
 
           rm Formula/tinytex.rb.bak
 
