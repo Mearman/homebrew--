@@ -51,3 +51,4 @@ jobs:
           git config --global user.name "GitHub Actions"
           git commit -am "Update TinyTeX to $tinytex_version"
           git push
+        continue-on-error: true
