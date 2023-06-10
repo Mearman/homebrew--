@@ -1,7 +1,7 @@
 class Tinytex < Formula
   desc "Tiny and easy-to-maintain LaTeX distribution based on TeX Live"
   homepage "https://yihui.org/tinytex/"
-  url "https://github.com/yihui/tinytex-releases/releases/download/v2023.06/TinyTeX-1-v2020.09.19.tgz"
+  url "https://github.com/yihui/tinytex-releases/releases/download/v2023.06/TinyTeX-1-v2023.06.tgz"
   sha256 "f9d94f4787b5d6814409257d30665c1c9c72318c45051d5569f11563221f3c64"
   license "GPL-2.0-or-later"
   head "https://yihui.org/tinytex/TinyTeX-1.tgz"
