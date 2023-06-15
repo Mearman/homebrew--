@@ -1,16 +1,16 @@
 <h1>Just a collection of my homebrew formulae and casks</h1>
 
-
 - [Why is this repo named \`homebrew--](#why-is-this-repo-named-homebrew--)
 - [Installation](#installation)
-	- [Tap this repository](#tap-this-repository)
+  - [Tap this repository](#tap-this-repository)
 - [Formulae](#formulae)
-	- [TinyTeX.](#tinytex)
+  - [TinyTeX.](#tinytex)
 - [Casks](#casks)
-	- [FreeFileSync](#freefilesync)
-	- [GPT4All](#gpt4all)
+  - [FreeFileSync](#freefilesync)
+  - [GPT4All](#gpt4all)
 
-##  Why is this repo named `homebrew-- 
+## Why is this repo named `homebrew--
+
 <details><summary></summary>
 
 I wanted to have the install process as simple as possible.
@@ -42,34 +42,36 @@ brew install username/-/formula
 </details>
 
 ## Installation
+
 This repository is for [Homebrew](https://brew.sh). To install Homebrew, run this command in your terminal:
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
 ### Tap this repository
+
 ```sh
 brew tap Mearman/-
 ```
 
 ## Formulae
+
 ### [TinyTeX](https://github.com/yihui/tinytex).
+
 > source: https://github.com/yihui/homebrew-tinytex
+
 ```sh
 brew install Mearman/-/tinytex
 ```
 
 ## Casks
 
-
 ### [FreeFileSync](https://www.freefilesync.org/)
-
-
 
 ```shell
 brew installMearman/-/freefilesync
 ```
-
 
 ### [GPT4All](https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-chat)
 
