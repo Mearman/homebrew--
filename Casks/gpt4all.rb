@@ -19,9 +19,6 @@ cask "gpt4all" do
 
 	uninstall trash: [
 		"/Applications/GPT4All.app"
-	]
-
-	uninstall rmdir: [
 		"#{ENV["HOME"]}/Library/Application Support/chatall/",
 		"/Applications/gpt4all/"
 	]
