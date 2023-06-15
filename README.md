@@ -1,4 +1,5 @@
 # Just a collection of my homebrew formulae and casks
+
 <!-- ## Why is this repo named `homebrew--`? -->
 <details>
 <summary>
@@ -34,6 +35,7 @@ brew install username/-/formula
 </details>
 
 ## homebrew-tinytex
+
 > source: https://github.com/yihui/homebrew-tinytex
 
 The Homebrew formula for [TinyTeX](https://github.com/yihui/tinytex).
