@@ -1,10 +1,17 @@
-# Just a collection of my homebrew formulae and casks
+<h1>Just a collection of my homebrew formulae and casks</h1>
 
-<!-- ## Why is this repo named `homebrew--`? -->
-<details>
-<summary>
-Why is this repo named `homebrew--`?
-</summary>
+
+- [Why is this repo named \`homebrew--](#why-is-this-repo-named-homebrew--)
+- [Installation](#installation)
+	- [Tap this repository](#tap-this-repository)
+- [Formulae](#formulae)
+	- [TinyTeX.](#tinytex)
+- [Casks](#casks)
+	- [FreeFileSync](#freefilesync)
+	- [GPT4All](#gpt4all)
+
+##  Why is this repo named `homebrew-- 
+<details><summary></summary>
 
 I wanted to have the install process as simple as possible.
 
@@ -34,53 +41,38 @@ brew install username/-/formula
 
 </details>
 
-## homebrew-tinytex
+## Installation
+This repository is for [Homebrew](https://brew.sh). To install Homebrew, run this command in your terminal:
 
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+### Tap this repository
+```sh
+brew tap Mearman/-
+```
+
+## Formulae
+### [TinyTeX](https://github.com/yihui/tinytex).
 > source: https://github.com/yihui/homebrew-tinytex
-
-The Homebrew formula for [TinyTeX](https://github.com/yihui/tinytex).
-
 ```sh
 brew install Mearman/-/tinytex
 ```
 
 ## Casks
 
-- [Casks](#casks)
-  - [FreeFileSync](#freefilesync)
-    - [Installation](#installation)
-    - [Updating FreeFileSync](#updating-freefilesync)
-  - [GPT4All](#gpt4all)
 
-### FreeFileSync
+### [FreeFileSync](https://www.freefilesync.org/)
 
-This repository is a [Homebrew](https://brew.sh) tap for the [FreeFileSync](https://www.freefilesync.org/) application. FreeFileSync is a folder comparison and synchronization software that optimizes file synchronization tasks and allows you to create and manage backup copies of your data.
 
-#### Installation
-
-To install FreeFileSync using this Homebrew tap, follow these steps:
-
-1. Make sure you have [Homebrew](https://brew.sh) installed on your macOS system. If you don't have it yet, visit [https://brew.sh](https://brew.sh) and follow the installation instructions.
-
-2. Tap this repository by running the following command:
 
 ```shell
-brew tap Mearman/freefilesync
+brew installMearman/-/freefilesync
 ```
 
-3. Install the FreeFileSync cask:
 
-```shell
-brew install --cask freefilesync
+### [GPT4All](https://github.com/nomic-ai/gpt4all/tree/main/gpt4all-chat)
+
+```sh
+brew install Mearman/-/gpt4all
 ```
-
-#### Updating FreeFileSync
-
-To update FreeFileSync to the latest version, simply run:
-
-```shell
-brew update
-brew upgrade --cask freefilesync
-```
-
-### GPT4All
