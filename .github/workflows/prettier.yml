@@ -41,7 +41,3 @@ jobs:
           git add .
           git diff --quiet && git diff --staged --quiet || git commit -m "Prettier"
           git push origin main
-
-
-
-          

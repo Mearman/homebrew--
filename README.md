@@ -1,8 +1,9 @@
-# Homebrew-FreeFileSync
+## Casks
+### FreeFileSync
 
 This repository is a [Homebrew](https://brew.sh) tap for the [FreeFileSync](https://www.freefilesync.org/) application. FreeFileSync is a folder comparison and synchronization software that optimizes file synchronization tasks and allows you to create and manage backup copies of your data.
 
-## Installation
+#### Installation
 
 To install FreeFileSync using this Homebrew tap, follow these steps:
 
@@ -20,7 +21,7 @@ brew tap Mearman/freefilesync
 brew install --cask freefilesync
 ```
 
-## Updating FreeFileSync
+#### Updating FreeFileSync
 
 To update FreeFileSync to the latest version, simply run:
 
