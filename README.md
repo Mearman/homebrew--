@@ -45,10 +45,11 @@ brew install Mearman/-/tinytex
 ## Casks
 
 - [Casks](#casks)
-	- [FreeFileSync](#freefilesync)
-		- [Installation](#installation)
-		- [Updating FreeFileSync](#updating-freefilesync)
-	- [GPT4All](#gpt4all)
+  - [FreeFileSync](#freefilesync)
+    - [Installation](#installation)
+    - [Updating FreeFileSync](#updating-freefilesync)
+  - [GPT4All](#gpt4all)
+
 ### FreeFileSync
 
 This repository is a [Homebrew](https://brew.sh) tap for the [FreeFileSync](https://www.freefilesync.org/) application. FreeFileSync is a folder comparison and synchronization software that optimizes file synchronization tasks and allows you to create and manage backup copies of your data.
